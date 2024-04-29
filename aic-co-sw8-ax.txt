@@ -1,0 +1,8 @@
+/interface bridge vlan
+add bridge=br-vlan tagged=br-vlan,sfp-sfpplus1,sfp-sfpplus2 vlan-ids=128
+add bridge=br-vlan tagged=br-vlan,sfp-sfpplus1,sfp-sfpplus5 vlan-ids=140
+
+/interface bridge port
+add bridge=br-vlan frame-types=admit-only-untagged-and-priority-tagged hw=no ingress-filtering=yes interface=ether1 pvid=130
+add bridge=br-vlan frame-types=admit-only-untagged-and-priority-tagged hw=no ingress-filtering=yes interface=ether2 pvid=130
+add bridge=br-vlan frame-types=admit-only-untagged-and-priority-tagged hw=no ingress-filtering=yes interface=ether3 pvid=128
